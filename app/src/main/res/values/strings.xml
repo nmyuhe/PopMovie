@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">热门电影</string>
+    <string name="movie_detail">电影详情</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_settings">设置123</string>
+
+    <!-- 网络连接出错 -->
+    <string name="connError">当前网络连接不可用，请先设置网络。</string>
+    <string name="fetchError">电影资料获取失败，请检查网络。</string>
+    <string name="posterDownError">图片下载失败！</string>
+
+    <!-- 程序运行时菜单项 -->
+    <string name="action_refresh">刷新</string>
+    <string name="action_setting">设置</string>
+    
+    <!-- 设置选项 -->
+    <string name="pref_sort_label">电影排序类别选择</string>
+    <string name="pref_sort_label_popular">按最受欢迎排序</string>
+    <string name="pref_sort_label_topRated">按评分最高排序</string>
+    <string name="pref_sort_key" translatable="false">getType</string>
+    <string name="pref_sort_popular" translatable="false">popular</string>
+    <string name="pref_sort_topRated" translatable="false">top_rated</string>
+
+</resources>
