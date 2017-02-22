@@ -26,6 +26,7 @@
         </activity>
         <activity
             android:name=".MovieDetailPagerActivity"
+            android:parentActivityName=".MainActivity"
             android:label="@string/movie_detail">
         </activity>
     </application>

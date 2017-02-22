@@ -12,6 +12,9 @@
     <string name="fetchError">电影资料获取失败，请检查网络。</string>
     <string name="posterDownError">图片下载失败！</string>
 
+    <!-- 获取电影信息成功 -->
+    <string name="fetchMovieInfoSuccess">获取电影信息成功！</string>
+
     <!-- 程序运行时菜单项 -->
     <string name="action_refresh">刷新</string>
     <string name="action_setting">设置</string>

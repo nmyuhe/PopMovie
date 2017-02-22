@@ -52,7 +52,7 @@ public class MovieDetailPagerFragment extends Fragment {
         ((TextView) rootView.findViewById(R.id.movie_title)).setText(mMovie.getTitle());
         ((TextView) rootView.findViewById(R.id.release_date)).setText(mMovie.getRelease_date().substring(0,4));
         Picasso.with(getActivity())
-                .load("https://image.tmdb.org/t/p/w185"+mMovie.getPoster_path())
+                .load("https://image.tmdb.org/t/p/w185"+ mMovie.getPoster_path())
                 .placeholder(R.mipmap.ic_launcher)
                 .fit()
                 .into((ImageView) rootView.findViewById(R.id.movie_image), new Callback() {

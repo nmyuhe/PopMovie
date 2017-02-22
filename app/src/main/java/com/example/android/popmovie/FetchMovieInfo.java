@@ -70,7 +70,7 @@ public class FetchMovieInfo {
                 Movie movie = new Movie();
 
                 //开始装配对象
-                movie.setId(movieJsonObj.getString("id"));
+                movie.setId(movieJsonObj.getInt("id"));
                 movie.setPoster_path(movieJsonObj.getString("poster_path"));
                 movie.setAdult(movieJsonObj.getBoolean("adult"));
                 movie.setOverview(movieJsonObj.getString("overview"));
@@ -116,7 +116,7 @@ public class FetchMovieInfo {
             Toast.makeText(mContext, R.string.connError, Toast.LENGTH_SHORT).show();
             return null;
         }
-
+        long startTime=System.currentTimeMillis();
         //开始获取电影Json
         try {
             url = new URL(getUrl());
