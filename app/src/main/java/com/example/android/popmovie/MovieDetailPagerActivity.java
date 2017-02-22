@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 
 import com.example.android.popmovie.bean.Movie;
 
@@ -24,9 +23,9 @@ public class MovieDetailPagerActivity extends FragmentActivity implements Action
     private ViewPager mViewPager;
 
     private ArrayList<Movie> mMovieList;
-    private String currentMovieId;
+    private int currentMovieId;
 
-    public static Intent newIntent(Context context, ArrayList<Movie> movies, String movieId) {
+    public static Intent newIntent(Context context, ArrayList<Movie> movies, int movieId) {
         Intent intent = new Intent(context, MovieDetailPagerActivity.class);
         intent.putExtra(MOVIE_ID, movieId);
         intent.putParcelableArrayListExtra(MOVIE_LIST, movies);
@@ -37,13 +36,13 @@ public class MovieDetailPagerActivity extends FragmentActivity implements Action
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail_pager);
-        currentMovieId = getIntent().getStringExtra(MOVIE_ID);
+        currentMovieId = getIntent().getIntExtra(MOVIE_ID,0);
         mMovieList = getIntent().getParcelableArrayListExtra(MOVIE_LIST);
         mMovieDetailPagerAdapter = new MovieDetailPagerAdapter(getSupportFragmentManager());
         mViewPager = (ViewPager) findViewById(R.id.pager_view);
         mViewPager.setAdapter(mMovieDetailPagerAdapter);
         for (int i = 0; i < mMovieList.size(); i++) {
-            if (mMovieList.get(i).getId().equals(currentMovieId)) {
+            if (mMovieList.get(i).getId()==currentMovieId) {
                 mViewPager.setCurrentItem(i);
                 break;
             }
