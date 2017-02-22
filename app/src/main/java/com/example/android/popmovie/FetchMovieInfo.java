@@ -53,6 +53,9 @@ public class FetchMovieInfo {
     }
 
     private List<Movie> parseMovies(String movieJsonStr) {
+        if (movieJsonStr == "") {
+            return null;
+        }
         // 需要解析的Json对象
         final String TMDB_PAGE = "page";
         final String TMDB_RESULTS = "results";
