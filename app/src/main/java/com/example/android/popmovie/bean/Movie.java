@@ -1,20 +1,26 @@
 package com.example.android.popmovie.bean;
 
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+
 /**
- * Created by Happy on 2017/2/6.
- * 电影bean
+ * 电影详细信息
+ * Created by Happy on 2017/2/21.
  */
 
-public class Movie implements Parcelable{
-    private String mId;
+public class Movie implements Parcelable {
+
+    private int mId;
     private String mPoster_path;
     private boolean mAdult;
     private String mOverview;
     private String mRelease_date;
-//    private String[] mGenre_ids;
+    //    private String[] mGenre_ids;
     private String mOriginal_title;
     private String mOriginal_language;
     private String mTitle;
@@ -24,11 +30,11 @@ public class Movie implements Parcelable{
     private boolean mVideo;
     private double mVote_average;
 
-    public String getId() {
+    public int getId() {
         return mId;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         mId = id;
     }
 
@@ -132,7 +138,7 @@ public class Movie implements Parcelable{
     }
 
     private Movie(Parcel in){
-        mId = in.readString();
+        mId = in.readInt();
         mPoster_path=in.readString();
         mAdult = in.readByte()!=0;
         mOverview=in.readString();
@@ -154,7 +160,7 @@ public class Movie implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(mId);
+        dest.writeInt(mId);
         dest.writeString(mPoster_path);
         dest.writeByte((byte) (mAdult ? 1:0));
         dest.writeString(mOverview);
@@ -180,7 +186,4 @@ public class Movie implements Parcelable{
             return new Movie[size];
         }
     };
-
-
-
 }
